@@ -16,7 +16,7 @@ sudo systemctl enable docker --now
 
 //Для этого сначала убедимся в наличие пакета curl.
 
-б) На системы RPM:
+На системы RPM:
 
 sudo yum install curl
 
