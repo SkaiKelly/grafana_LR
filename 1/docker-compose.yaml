@@ -40,19 +40,6 @@ services:
         limits:
           memory: 1024M
           
-  grafana-image-renderer:
-    image: "grafana/grafana-image-renderer:3.9.0"
-    environment:
-      TZ: "Europe/Moscow" # change to your timezone
-    deploy:
-      mode: replicated
-      replicas: 1
-      update_config:
-        order: start-first
-      resources:
-        limits:
-          memory: 1024M
-          
   prometheus:
     image: "prom/prometheus:v2.48.0"
     ports:
