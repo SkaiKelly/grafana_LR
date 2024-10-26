@@ -2,6 +2,27 @@ version: "3"
 
 services:
 
+  node-exporter:
+    image: prom/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    container_name: exporter
+    hostname: exporter
+    command:
+      - --path.procfs=/host/proc
+      - --path.sysfs=/host/sys
+      - --collector.filesystem.ignored-mount-points
+      - ^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)
+    ports:
+      - 9100:9100
+    restart: unless-stopped
+    environment:
+      TZ: "Europe/Moscow"
+    networks:
+      - default
+
   grafana:
     image: "grafana/grafana-oss:10.2.2"
     ports:
@@ -39,7 +60,7 @@ services:
       resources:
         limits:
           memory: 1024M
-          
+                   
   prometheus:
     image: "prom/prometheus:v2.48.0"
     ports:
@@ -67,6 +88,52 @@ services:
       resources:
         limits:
           memory: 1024M
+
+  vmagent:
+    container_name: vmagent
+    image: victoriametrics/vmagent:v1.105.0
+    depends_on:
+      - "victoriametrics"
+    ports:
+      - 8429:8429
+    volumes:
+      - vmagentdata:/vmagentdata
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - "--promscrape.config=/etc/prometheus/prometheus.yml"
+      - "--remoteWrite.url=http://victoriametrics:8428/api/v1/write"
+    restart: always
+  # VictoriaMetrics instance, a single process responsible for
+  # storing metrics and serve read requests.
+  victoriametrics:
+    container_name: victoriametrics
+    image: victoriametrics/victoria-metrics:v1.105.0
+    ports:
+      - 8428:8428
+      - 8089:8089
+      - 8089:8089/udp
+      - 2003:2003
+      - 2003:2003/udp
+      - 4242:4242
+    volumes:
+      - vmdata:/storage
+    command:
+      - "--storageDataPath=/storage"
+      - "--graphiteListenAddr=:2003"
+      - "--opentsdbListenAddr=:4242"
+      - "--httpListenAddr=:8428"
+      - "--influxListenAddr=:8089"
+      - "--vmalert.proxyURL=http://vmalert:8880"
+    networks:
+      - vm_net
+    restart: always
+
+volumes:
+  vmagentdata: {}
+  vmdata: {}
+  grafanadata: {}
+networks:
+  vm_net:
 
 # Uncomment for using docker secrets
 # create docker secret first: docker secret create [OPTIONS] SECRET [file|-]
