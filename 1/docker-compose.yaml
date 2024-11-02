@@ -124,8 +124,6 @@ services:
       - "--httpListenAddr=:8428"
       - "--influxListenAddr=:8089"
       - "--vmalert.proxyURL=http://vmalert:8880"
-    networks:
-      - vm_net
     restart: always
 
 volumes:
