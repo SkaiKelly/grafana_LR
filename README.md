@@ -7,7 +7,12 @@
 sudo wget -P /etc/yum.repos.d/ https://download.docker.com/linux/centos/docker-ce.repo
 ![image](https://github.com/user-attachments/assets/8974b604-8238-4c21-aa7e-33faa8bc1952)
 
+sudo yum install docker-ce docker-ce-cli containerd.io
 ![image](https://github.com/user-attachments/assets/ffdd913c-33d2-4489-a59c-581928dbc968)
+
+sudo systemctl enable docker --now
+![image](https://github.com/user-attachments/assets/1a319c45-0467-4354-80ae-8adb82d8ad57)
+
 
 
 
