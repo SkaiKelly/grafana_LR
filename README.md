@@ -11,6 +11,8 @@ sudo yum install docker-ce docker-ce-cli containerd.io
 ![image](https://github.com/user-attachments/assets/ffdd913c-33d2-4489-a59c-581928dbc968)
 
 sudo systemctl enable docker --now
+sudo yum install curl
+COMVER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
 ![image](https://github.com/user-attachments/assets/1a319c45-0467-4354-80ae-8adb82d8ad57)
 
 
