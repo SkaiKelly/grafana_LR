@@ -15,6 +15,16 @@ sudo yum install curl
 COMVER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
 ![image](https://github.com/user-attachments/assets/1a319c45-0467-4354-80ae-8adb82d8ad57)
 
+sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+![image](https://github.com/user-attachments/assets/6f4a7ffc-ff0c-4155-a082-07d7d0efc5e5)
+
+![image](https://github.com/user-attachments/assets/5a7024a8-b070-489c-a21b-1799118f110a)
+
+![image](https://github.com/user-attachments/assets/b469b556-d8b7-467c-a1d9-125487dcafd8)
+
+
+
+
 
 
 
