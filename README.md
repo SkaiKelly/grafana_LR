@@ -141,6 +141,8 @@ Find and import dashboards for common applications at grafana.com/dashboards: 18
 Select Prometheus ждем кнопку "Import"
 ![image](https://github.com/user-attachments/assets/68774952-a375-4e77-8b1e-a61d1210d443)
 
+VicroriaMetrics/h3
+
 
 
 
