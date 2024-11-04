@@ -53,12 +53,27 @@ Tеперь скачиваем скрипт docker-compose и помещаем �
 
 Можно скачать git прямо из командной строки прописав Y
 
-git clone https://github.com/skl256/grafana_stack_for_docker.git
+10. git clone https://github.com/skl256/grafana_stack_for_docker.git
 
-выдаст ошибку и предложит скачать git
-
+выдаст ошибку и предложит скачать git, согласиться и продолжить
 ![image](https://github.com/user-attachments/assets/b469b556-d8b7-467c-a1d9-125487dcafd8)
 
+11. cd grafana_stack_for_docker
+    переход в папку
+
+sudo mkdir -p /mnt/common_volume/swarm/grafana/config - ничего не покажет
+
+sudo mkdir -p /mnt/common_volume/grafana/{grafana-config,grafana-data,prometheus-data,loki-data,promtail-data} - ничего не покажет
+
+sudo chown -R $(id -u):$(id -g) {/mnt/common_volume/swarm/grafana/config,/mnt/common_volume/grafana} - ничего не покажет
+
+touch /mnt/common_volume/grafana/grafana-config/grafana.ini - ничего не покажет
+
+cp config/* /mnt/common_volume/swarm/grafana/config/ - ничего не покажет
+
+mv grafana.yaml docker-compose.yaml - ничего не покажет, но можно проверить при помощи команды ls
+
+sudo docker compose up -d
 ![image](https://github.com/user-attachments/assets/a58b0533-185d-49d2-b5ae-f48ce5ec261f)
 
 ![image](https://github.com/user-attachments/assets/929f2f13-f8e2-4a24-8bef-a423f785b144)
