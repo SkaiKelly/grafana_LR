@@ -57,21 +57,36 @@ Tеперь скачиваем скрипт docker-compose и помещаем �
 ![image](https://github.com/user-attachments/assets/b469b556-d8b7-467c-a1d9-125487dcafd8)
 
 11. cd grafana_stack_for_docker
-    переход в папку
+    
+переход в папку
 
-sudo mkdir -p /mnt/common_volume/swarm/grafana/config - ничего не покажет
+12. sudo mkdir -p /mnt/common_volume/swarm/grafana/config
 
-sudo mkdir -p /mnt/common_volume/grafana/{grafana-config,grafana-data,prometheus-data,loki-data,promtail-data} - ничего не покажет
+команда создаёт полный путь /mnt/common_volume/swarm/grafana/config, включая все необходимые промежуточные каталоги, если они ещё не существуют.
 
-sudo chown -R $(id -u):$(id -g) {/mnt/common_volume/swarm/grafana/config,/mnt/common_volume/grafana} - ничего не покажет
+13. sudo mkdir -p /mnt/common_volume/grafana/{grafana-config,grafana-data,prometheus-data,loki-data,promtail-data}
 
-touch /mnt/common_volume/grafana/grafana-config/grafana.ini - ничего не покажет
+команда создаёт структуру каталогов для Grafana и связанных с ней компонентов, если они ещё не существуют.
 
-cp config/* /mnt/common_volume/swarm/grafana/config/ - ничего не покажет
+14. sudo chown -R $(id -u):$(id -g) {/mnt/common_volume/swarm/grafana/config,/mnt/common_volume/grafana}
 
-mv grafana.yaml docker-compose.yaml - ничего не покажет, но можно проверить при помощи команды ls
+все файлы и каталоги в указанных директориях будут переданы в собственность текущему пользователю и его группе
+
+15. touch /mnt/common_volume/grafana/grafana-config/grafana.ini
+
+файл grafana.ini уже существует, команда обновит его временные метки (время последнего доступа и изменения). Если файл не существует, команда создаст новый пустой файл с указанным именем по указанному пути.
+
+cp config/* /mnt/common_volume/swarm/grafana/config/
+
+команда копирует все файлы и подкаталоги из директории config в директорию /mnt/common_volume/swarm/grafana/config/
+
+mv grafana.yaml docker-compose.yaml 
+
+команда переименовывает файл grafana.yaml в docker-compose.yaml. Ничего не покажет, но можно проверить при помощи команды ls
 
 sudo docker compose up -d
+
+команда создает и запускает контейнеры в фоновом режиме, используя конфигурацию из файла docker-compose.yml, с правами суперпользователя.
 ![image](https://github.com/user-attachments/assets/a58b0533-185d-49d2-b5ae-f48ce5ec261f)
 
 ![image](https://github.com/user-attachments/assets/929f2f13-f8e2-4a24-8bef-a423f785b144)
