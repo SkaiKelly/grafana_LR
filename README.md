@@ -22,11 +22,14 @@ sudo yum install docker-ce docker-ce-cli containerd.io
 ![image](https://github.com/user-attachments/assets/ffdd913c-33d2-4489-a59c-581928dbc968)
 
 sudo systemctl enable docker --now
+Запускаем его и разрешаем автозапуск
 sudo yum install curl
+Для этого сначала убедимся в наличие пакета curl
 COMVER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
 ![image](https://github.com/user-attachments/assets/1a319c45-0467-4354-80ae-8adb82d8ad57)
 
 sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+Tеперь скачиваем скрипт docker-compose и помещаем его в каталог /usr/bin
 ![image](https://github.com/user-attachments/assets/6f4a7ffc-ff0c-4155-a082-07d7d0efc5e5)
 
 ![image](https://github.com/user-attachments/assets/5a7024a8-b070-489c-a21b-1799118f110a)
