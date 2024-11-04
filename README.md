@@ -95,6 +95,11 @@
 
 sudo vi docker-compose.yaml
 
+•команда открывает файл docker-compose.yaml в текстовом редакторе vi с правами суперпользователя, что позволяет вам редактировать его содержимое.
+• Нас перекинет в текстовый редактор
+• Что-бы что-то изменить в тесковом редакторе нажмите insert на клавиатуре
+• Что бы сохранить что-то в этом документе нажимаем Esc пишем :wq! В этом текставом редакторе мы должны поставить node-exporter после services
+
 ![image](https://github.com/user-attachments/assets/3b7cdd9c-0a33-4d84-ae8d-d56f99fa35ac)
 
 ![image](https://github.com/user-attachments/assets/92943bf8-6331-4269-a1d2-f3dc44080577)
