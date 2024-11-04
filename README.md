@@ -93,7 +93,7 @@
 
 ![image](https://github.com/user-attachments/assets/929f2f13-f8e2-4a24-8bef-a423f785b144)
 
-sudo vi docker-compose.yaml
+19. sudo vi docker-compose.yaml
 
 •команда открывает файл docker-compose.yaml в текстовом редакторе vi с правами суперпользователя, что позволяет вам редактировать его содержимое.
 
