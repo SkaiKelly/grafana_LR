@@ -51,6 +51,12 @@ docker-compose --version
 Проверка установленной версии Docker Compose.
 ![image](https://github.com/user-attachments/assets/5a7024a8-b070-489c-a21b-1799118f110a)
 
+Можно скачать git прямо из командной строки прописав Y
+
+git clone https://github.com/skl256/grafana_stack_for_docker.git
+
+выдаст ошибку и предложит скачать git
+
 ![image](https://github.com/user-attachments/assets/b469b556-d8b7-467c-a1d9-125487dcafd8)
 
 ![image](https://github.com/user-attachments/assets/a58b0533-185d-49d2-b5ae-f48ce5ec261f)
