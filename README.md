@@ -32,6 +32,10 @@ sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker
 Tеперь скачиваем скрипт docker-compose и помещаем его в каталог /usr/bin
 ![image](https://github.com/user-attachments/assets/6f4a7ffc-ff0c-4155-a082-07d7d0efc5e5)
 
+sudo chmod +x /usr/bin/docker-compose
+Предоставление прав на выполнение файла docker-compose.
+docker-compose --version
+Проверка установленной версии Docker Compose.
 ![image](https://github.com/user-attachments/assets/5a7024a8-b070-489c-a21b-1799118f110a)
 
 ![image](https://github.com/user-attachments/assets/b469b556-d8b7-467c-a1d9-125487dcafd8)
