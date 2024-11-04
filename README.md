@@ -14,6 +14,7 @@ sudo yum install wget
 ![image](https://github.com/user-attachments/assets/b2650d1d-f531-4e25-9842-012e9076cc60)
 
 sudo wget -P /etc/yum.repos.d/ https://download.docker.com/linux/centos/docker-ce.repo
+Скачиваем файл репозитория
 ![image](https://github.com/user-attachments/assets/8974b604-8238-4c21-aa7e-33faa8bc1952)
 
 sudo yum install docker-ce docker-ce-cli containerd.io
