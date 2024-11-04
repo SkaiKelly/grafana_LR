@@ -148,7 +148,51 @@ Select Prometheus ждем кнопку "Import"
 1. cd grafana_stack_for_docker
 
 • команда cd grafana_stack_for_docker изменяет текущий рабочий каталог на каталог grafana_stack_for_docker.
+
+2. sudo vi docker-compose.yaml
+
+• команда sudo открывает файл docker-compose.yaml в редакторе vi с правами суперпользователя.
 ![image](https://github.com/user-attachments/assets/1a957374-26c9-4b6f-96c1-0741d8d1b745)
+
+В самом текстовом редакторе после prometheus вставляем
+![image](https://github.com/user-attachments/assets/b25ebd84-0173-4e2c-9fe5-c94b7c290a37)
+Захом в connection
+там где мы писали http:prometheus:9090 пишем http:victoriametrics:9090 И заменяем имя из "Prometheus-2" в "Vika"
+нажимаем на dashboards add visualition выбираем "Vika"
+снизу меняем на "cod"
+Переходим в терминал и пишем
+
+3. curl -G 'http://localhost:8428/api/v1/query'
+
+• команда делает запрос к API для получения данных по метрике OILCOINT_metric1
+
+4. --data-urlencode 'query=OILCOINT_metric1'
+
+• команда выводит информацию о типе и значении этой метрики в формате, который может быть использован системой мониторинга Prometheus.
+
+5. echo -e "# TYPE OILCOINT_metric1 gauge\nOILCOINT_metric1 0"
+
+• команда выводит текст, который может быть использован для определения метрики в формате, совместимом с Prometheus
+
+6. curl --data-binary @- http://localhost:8428/api/v1/import/prometheus
+
+команда отправляет бинарные данные (например, метрики в формате Prometheus) на локальный сервер, который слушает на порту 8428.
+![image](https://github.com/user-attachments/assets/45c35e91-2867-4a03-8d27-262c3a7ac9da)
+
+Значение 0 меняем на любое другое
+
+Копируем переменную OILCOINT_metric1 и вставляем в cod
+
+Нажимаем run
+
+![image](https://github.com/user-attachments/assets/e6d1a7a9-3bc7-43da-a19c-c3304a535cb6)
+![image](https://github.com/user-attachments/assets/b1fc3cd1-9abf-451d-9779-60872a566a98)
+
+
+
+
+
+
 
 
 
