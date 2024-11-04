@@ -113,7 +113,7 @@
 ![image](https://github.com/user-attachments/assets/92943bf8-6331-4269-a1d2-f3dc44080577)
 ![image](https://github.com/user-attachments/assets/61c52dfe-6091-40d1-a314-80d7bca39245)
 
-Этап Grafana✨
+                              Этап Grafana✨
 
 переходим на сайт localhost:3000
 
@@ -141,7 +141,12 @@ Find and import dashboards for common applications at grafana.com/dashboards: 18
 Select Prometheus ждем кнопку "Import"
 ![image](https://github.com/user-attachments/assets/68774952-a375-4e77-8b1e-a61d1210d443)
 
-VicroriaMetrics/h3
+                                 VicroriaMetrics🎂
+
+Для начала изменим docker-compose.yaml
+
+cd grafana_stack_for_docker
+![image](https://github.com/user-attachments/assets/1a957374-26c9-4b6f-96c1-0741d8d1b745)
 
 
 
