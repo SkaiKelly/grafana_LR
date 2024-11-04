@@ -139,19 +139,8 @@ Password: admin
 ждем кнопку "Import dashboard"
 Find and import dashboards for common applications at grafana.com/dashboards: 1860 //ждем кнопку Load
 Select Prometheus ждем кнопку "Import"
+![image](https://github.com/user-attachments/assets/68774952-a375-4e77-8b1e-a61d1210d443)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-![1](https://github.com/user-attachments/assets/d47785a9-3f36-4d62-9012-bc075d5654ce)
