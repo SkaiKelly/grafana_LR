@@ -105,6 +105,12 @@
 ![image](https://github.com/user-attachments/assets/3b7cdd9c-0a33-4d84-ae8d-d56f99fa35ac)
 ![image](https://github.com/user-attachments/assets/c2c56867-dfd8-4cd8-aeec-fc2332f54861)
 
+20. sudo vi prometheus.yaml 
+
+• команда открывает файл prometheus.yaml в текстовом редакторе vi с правами суперпользователя.
+
+• /mnt/common_volume/swarm/grafana/config/prometheus.yaml - исправить targets: на exporter:9100,
+
 
 ![image](https://github.com/user-attachments/assets/92943bf8-6331-4269-a1d2-f3dc44080577)
 ![image](https://github.com/user-attachments/assets/61c52dfe-6091-40d1-a314-80d7bca39245)
