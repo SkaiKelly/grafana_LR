@@ -137,15 +137,15 @@
 
 ![image](https://github.com/user-attachments/assets/68774952-a375-4e77-8b1e-a61d1210d443)
 
-    VicroriaMetrics🎂
+## VictoriaMetrics
 
 Для начала изменим docker-compose.yaml
 
-1. cd grafana_stack_for_docker
+1. `cd grafana_stack_for_docker`
 
 • команда cd grafana_stack_for_docker изменяет текущий рабочий каталог на каталог grafana_stack_for_docker.
 
-2. sudo vi docker-compose.yaml
+2. `sudo vi docker-compose.yaml`
 
 • команда sudo открывает файл docker-compose.yaml в редакторе vi с правами суперпользователя.
 ![image](https://github.com/user-attachments/assets/1a957374-26c9-4b6f-96c1-0741d8d1b745)
@@ -158,19 +158,15 @@
 снизу меняем на "cod"
 Переходим в терминал и пишем
 
-3. curl -G 'http://localhost:8428/api/v1/query'
+3. `curl -G 'http://localhost:8428/api/v1/query' --data-urlencode 'query=OILCOINT_metric1'`
 
 • команда делает запрос к API для получения данных по метрике OILCOINT_metric1
 
-4. --data-urlencode 'query=OILCOINT_metric1'
-
 • команда выводит информацию о типе и значении этой метрики в формате, который может быть использован системой мониторинга Prometheus.
 
-5. echo -e "# TYPE OILCOINT_metric1 gauge\nOILCOINT_metric1 0"
+5. `echo -e "# TYPE OILCOINT_metric1 gauge\nOILCOINT_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus  `
 
 • команда выводит текст, который может быть использован для определения метрики в формате, совместимом с Prometheus
-
-6. curl --data-binary @- http://localhost:8428/api/v1/import/prometheus
 
 команда отправляет бинарные данные (например, метрики в формате Prometheus) на локальный сервер, который слушает на порту 8428.
 ![image](https://github.com/user-attachments/assets/45c35e91-2867-4a03-8d27-262c3a7ac9da)
