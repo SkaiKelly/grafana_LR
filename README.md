@@ -69,7 +69,7 @@
 
 • команда создаёт полный путь /mnt/common_volume/swarm/grafana/config, включая все необходимые промежуточные каталоги, если они ещё не существуют.
 
-13. `sudo mkdir -p /mnt/common_volume/grafana/{grafana-config,grafana-data,prometheus-data,loki-data,promtail-data}`
+13. `sudo mkdir -p /mnt/common_volume/grafana/{grafana-config,grafana-data,prometheus-data}`
 
 • команда создаёт структуру каталогов для Grafana и связанных с ней компонентов, если они ещё не существуют.
 
