@@ -34,7 +34,8 @@
 
 6. `COMVER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)`
 
-• Использование команды curl для получения последней версии Docker Compose
+• Объявление переменной COMVER, полученной в результате curl запроса, хранящей в себе номер последней
+версии Docker Compose
 ![image](https://github.com/user-attachments/assets/1a319c45-0467-4354-80ae-8adb82d8ad57)
 
 7. `sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose`                        
