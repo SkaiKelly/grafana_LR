@@ -166,17 +166,18 @@
 снизу меняем на "code"
 Переходим в терминал и пишем
 
-3. `curl -G 'http://localhost:8428/api/v1/query' --data-urlencode 'query=OILCOINT_metric1'`
+3. `echo -e "# TYPE OILCOINT_metric1 gauge\nOILCOINT_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus  `
+
+• команда выводит текст, который может быть использован для определения метрики в формате, совместимом с Prometheus
+
+• команда отправляет бинарные данные (например, метрики в формате Prometheus) на локальный сервер, который слушает на порту 8428.
+
+4. `curl -G 'http://localhost:8428/api/v1/query' --data-urlencode 'query=OILCOINT_metric1'`
 
 • команда делает запрос к API для получения данных по метрике OILCOINT_metric1
 
 • команда выводит информацию о типе и значении этой метрики в формате, который может быть использован системой мониторинга Prometheus.
 
-5. `echo -e "# TYPE OILCOINT_metric1 gauge\nOILCOINT_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus  `
-
-• команда выводит текст, который может быть использован для определения метрики в формате, совместимом с Prometheus
-
-команда отправляет бинарные данные (например, метрики в формате Prometheus) на локальный сервер, который слушает на порту 8428.
 ![image](https://github.com/user-attachments/assets/45c35e91-2867-4a03-8d27-262c3a7ac9da)
 
 Значение 0 меняем на любое другое
@@ -188,6 +189,7 @@
 ![image](https://github.com/user-attachments/assets/e6d1a7a9-3bc7-43da-a19c-c3304a535cb6)
 ![image](https://github.com/user-attachments/assets/b1fc3cd1-9abf-451d-9779-60872a566a98)
 ![image](https://github.com/user-attachments/assets/739a9d3f-163b-40df-bc74-f5b76613a5f5)
+
 
 
 
