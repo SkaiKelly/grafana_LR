@@ -153,10 +153,13 @@
 2. `sudo vi docker-compose.yaml`
 
 • команда sudo открывает файл docker-compose.yaml в редакторе vi с правами суперпользователя.
+
 ![image](https://github.com/user-attachments/assets/1a957374-26c9-4b6f-96c1-0741d8d1b745)
 
 В самом текстовом редакторе после prometheus вставляем
+
 ![image](https://github.com/user-attachments/assets/b25ebd84-0173-4e2c-9fe5-c94b7c290a37)
+
 Захом в connection
 там где мы писали http//:prometheus:9090 пишем http:victoriametrics:9090 И заменяем имя из "Prometheus-2" в "Vika"
 нажимаем на dashboards add visualition выбираем "Vika"
