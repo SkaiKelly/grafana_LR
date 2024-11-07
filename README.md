@@ -158,9 +158,9 @@
 В самом текстовом редакторе после prometheus вставляем
 ![image](https://github.com/user-attachments/assets/b25ebd84-0173-4e2c-9fe5-c94b7c290a37)
 Захом в connection
-там где мы писали http:prometheus:9090 пишем http:victoriametrics:9090 И заменяем имя из "Prometheus-2" в "Vika"
+там где мы писали http//:prometheus:9090 пишем http:victoriametrics:9090 И заменяем имя из "Prometheus-2" в "Vika"
 нажимаем на dashboards add visualition выбираем "Vika"
-снизу меняем на "cod"
+снизу меняем на "code"
 Переходим в терминал и пишем
 
 3. `curl -G 'http://localhost:8428/api/v1/query' --data-urlencode 'query=OILCOINT_metric1'`
