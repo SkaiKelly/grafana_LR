@@ -115,6 +115,7 @@
 • команда открывает файл prometheus.yaml в текстовом редакторе vi с правами суперпользователя.
 
 • /mnt/common_volume/swarm/grafana/config/prometheus.yaml - исправить targets: на exporter:9100,
+
 ![image](https://github.com/user-attachments/assets/92943bf8-6331-4269-a1d2-f3dc44080577)
 ![image](https://github.com/user-attachments/assets/61c52dfe-6091-40d1-a314-80d7bca39245)
 
