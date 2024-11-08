@@ -190,7 +190,7 @@
 
 ![image](https://github.com/user-attachments/assets/b1fc3cd1-9abf-451d-9779-60872a566a98)
 
-Копируем переменную OILCOINT_metric1 и вставляем в cod
+Копируем переменную OILCOINT_metric1 и вставляем в code
 
 ![image](https://github.com/user-attachments/assets/739a9d3f-163b-40df-bc74-f5b76613a5f5)
 
